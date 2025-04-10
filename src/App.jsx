@@ -129,7 +129,8 @@ function Quiz() {
   const [difficulty, setDifficulty] = useState("");
 
   const question = currentQuestion[currentIndex];
-  const option = [question.correct_answer, ...question.incorrect_answers];
+  const optionBeforeShuffle = [question.correct_answer, ...question.incorrect_answers];
+  const option = optionBeforeShuffle.sort();
 
   useEffect(() => {
     const level = question.difficulty;
