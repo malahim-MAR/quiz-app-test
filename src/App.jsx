@@ -194,17 +194,18 @@ function Quiz() {
           </p>
         </div>
 
-        <div className="options-container">
-          {option.map((item, index) => (
-            <button
-              className={`option-btn ${buttonValue === item ? "selected" : ""}`}
-              onClick={CheckButtonText}
-              key={index}
-            >
-              {item}
-            </button>
-          ))}
-        </div>
+  <div className="options-container">
+  {[...option].sort(() => Math.random() - 0.5).map((item, index) => (
+    <button
+      className={`option-btn ${buttonValue === item ? "selected" : ""}`}
+      onClick={CheckButtonText}
+      key={index}
+    >
+      {item}
+    </button>
+  ))}
+</div>
+
 
         <div className="navigation">
           <button className="next-btn" onClick={ChangeQuestionIndex}>
